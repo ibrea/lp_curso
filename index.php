@@ -29,7 +29,7 @@
       <div class="row">
 
         <div class="col-md-3  logo">
-          <a href="index.php" class="navbar-brand"> <img src="img/logo.png" alt="Logo Tansjp"></a></a>
+          <a href="index.php" class="navbar-brand"> <img src="img/logo.png" alt="Logo"></a></a>
 
 
         </div>
