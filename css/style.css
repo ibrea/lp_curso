@@ -1,0 +1,1738 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* 
+html,
+body {
+
+    text-rendering: optimizeLegibility;
+    image-rendering: optimizeQuality;
+
+    scroll-behavior: smooth;
+} */
+  /* Buttons */
+  #rewind-btn,
+  #forward-btn,
+  #volume-btn,
+  #fullscreen-btn {
+      position: absolute;
+      color: white; /*Mude a cor dos botões aqui :)*/
+      cursor: pointer;
+      z-index: 30;
+  }
+
+  #rewind-btn,
+  #forward-btn,
+  #volume-btn {
+      font-size: 0.875rem;
+  }
+
+  #fullscreen-btn {
+      font-size: 0.75rem;
+  }
+
+  #rewind-btn {
+      bottom: .2rem;
+      left: 5%;
+  }
+
+  #forward-btn {
+      bottom: .2rem;
+      left: 12%;
+  }
+
+  #volume-btn {
+      bottom: .2rem;
+      left: 18%;
+  }
+      #fullscreen-btn {
+      bottom: .3rem;
+      right: 5%;
+  }
+
+  /*Classe para ocultar o botão*/
+  .botao{
+      display: none;
+  }
+
+  /* Video Overlays */
+  .cov,
+  .covall,
+  #loadingVideo,
+  #cfs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 100%;
+  }
+
+  #loadingVideo {
+      background: none;
+  }
+
+  .no-interaction {
+      pointer-events: none;
+  }
+
+  /* Volume Slider */
+  #volume-slider {
+      position: absolute;
+      bottom: 10px;
+      right: .1rem;
+      width: 8%;
+      z-index: 30;
+      display: flex;
+  }
+  /* Fullscreen Button */
+  #fullscreen-btn {
+      border: none;
+  }
+  
+  /*
+  Para alterar as imagens de fundo pesquise no código onde tem links iguais a esses :)
+  */
+  #cfs {
+      background-image: url(../img/iniciar.png);
+      background-size: cover;
+      display: none;
+      cursor: pointer;
+      z-index: 25;
+      cursor: pointer;
+  }
+
+  .cov {
+      background-image: url(..img/iniciar.png);
+      background-size: cover;
+      display: none;
+      z-index: 20 !important;
+      cursor: pointer;
+  }
+
+  .covall {
+      z-index: 10 !important;
+  }
+
+  .responsive-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      margin: auto;
+
+  }
+
+  .responsive-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+  }
+
+  /* Media queries */
+
+  @media screen and (min-width: 1200px) {
+      #rewind-btn{
+          left: 5%;
+      }
+      #forward-btn{
+          left: 15%;
+      }
+      #volume-btn{
+          left: 25%;
+      }
+      #fullscreen-btn{
+          right: 8%;
+      }
+
+      #rewind-btn,
+      #forward-btn,
+      #volume-btn,
+      #fullscreen-btn,
+      #volume-slider{
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+      }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+      #rewind-btn{
+          left: 5%;
+      }
+      #forward-btn{
+          left: 15%;
+      }
+      #volume-btn{
+          left: 25%;
+      }
+      #fullscreen-btn{
+          right: 8%;
+      }
+      #rewind-btn,
+      #forward-btn,
+      #volume-btn,
+      #fullscreen-btn,
+      #volume-slider{
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+      }
+  }
+
+  @media screen and (min-width: 469px) and (max-width: 767px) {
+      #rewind-btn{
+          left: 5%;
+      }
+
+      #forward-btn{
+          left: 15%;
+      }
+
+      #volume-btn{
+          left: 25%;
+      }
+
+      #fullscreen-btn{
+
+          font-size: 1.5rem;
+          right: 8%;
+          margin-bottom: 1.3rem;
+      }
+
+      #rewind-btn,
+      #forward-btn,
+      #volume-btn,
+      #volume-slider{
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+      }
+  }
+
+  @media screen and (max-width: 468px) {
+      #rewind-btn{
+          left: 2%;
+      }
+
+      #forward-btn{
+          left: 15%;
+      }
+
+      #volume-btn{
+          left: 29%;
+      }
+
+      #fullscreen-btn{
+          right: 8%;
+          font-size:  1.2rem;
+          margin-bottom: .6rem;
+      }
+
+      #rewind-btn,
+      #forward-btn,
+      #volume-btn,
+      #volume-slider{
+          font-size: 1.2rem;
+          margin-bottom: .8rem;
+      }
+  }
+
+  .safari .controls {
+      display: none !important;
+  }
+.smobile{
+    display: none;
+}
+
+header#topo {
+    width: 80%;
+    margin: 80px auto;
+
+}
+
+.header {
+    background-image: url('../img/fundo.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    z-index: 3;
+    position: relative;
+
+}
+
+section.escola img {
+    width: -webkit-fill-available;
+}
+
+section.escola {
+    padding: 0px;
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 3;
+    position: relative;
+    background: #fff;
+}
+
+section.escola h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+
+}
+
+section.videos h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35;
+
+}
+
+section.antesDepois h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35;
+
+}
+
+section.perguntas h1 {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+section.perguntas h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35;
+
+
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #000;
+    padding: 23px;
+    border-radius: 50px;
+    width: 68%;
+    margin: 84px auto;
+}
+.botaoContato {
+    display: flex;
+}
+.infos p {
+    text-align: justify;
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 22px;
+    margin-top: 21px;
+}
+
+.infos img {
+    width: 80% !important;
+}
+.fundotitulo {
+    background: #fff;
+    z-index: 3;
+    position: relative;
+}
+
+section.garantia h2,
+.duvidas h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35;
+
+
+}
+
+.row.questions {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 3;
+    position: relative;
+    background: #fff;
+}
+
+.antesDepois p {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.videos p {
+    font-size: 28px;
+}
+
+section.escolha p {
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.elementor-shape .elementor-shape-fill {
+    fill: #fff;
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.col-md-6.blocovideo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 3;
+}
+.fundovideos {
+    background: #fff;
+    z-index: 3;
+    position: relative;
+}
+
+.titleVideo {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.videos .elementor-shape .elementor-shape-fill,
+.perguntas .elementor-shape .elementor-shape-fill,
+.garantia .elementor-shape .elementor-shape-fill,
+.duvidas .elementor-shape .elementor-shape-fill {
+    fill: #0d6e3d;
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+section.escolha
+ {
+    background-color: #063;
+    
+    transition: background .3s, border-radius .3s, opacity .3s;
+    height: auto;
+    z-index: 3;
+    position: relative
+   
+
+}
+
+
+.criador,
+.metodoaprovado,
+.passos {
+    background-color: #063;
+    
+    transition: background .3s, border-radius .3s, opacity .3s;
+    height: auto;
+   
+   
+
+}
+
+section.aprender {
+    background-color: #063;
+     
+    transition: background .3s, border-radius .3s, opacity .3s;
+    height: auto;
+   
+    padding-bottom: 36px;
+    z-index: 3;
+    position: relative;
+
+
+}
+section.antesDepois {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+}
+
+.elementor-1723 .elementor-element.elementor-element-60c985c9>.elementor-shape-top svg {
+    width: calc(100% + 1.3px);
+    height: 35px;
+}
+
+.elementor-shape svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 35px;
+    z-index: 99;
+}
+
+.elementor-shape {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+}
+
+section.escolha h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+
+}
+
+section.criador h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 27px;
+
+}
+
+section.metodoaprovado h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 27px;
+
+}
+
+section.duvidastwo h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 27px;
+
+}
+
+.duvidastwo {
+    background-image: url('../img/51-1-1-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contatoinfo {
+    margin-top: 0;
+}
+
+.duvidastwo p {
+    color: #FFFFFF;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    width: var(--container-widget-width, 99.643%);
+    max-width: 99.643%;
+    --container-widget-width: 99.643%;
+    --container-widget-flex-grow: 0;
+}
+
+.whatsapp {
+    width: 80px;
+    background: green;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    border-radius: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 43px;
+    bottom: 33px;
+    z-index: 1;
+}
+
+.whatsapp a {
+    color: #fff;
+}
+
+.duvidastwo h3 {
+    color: #0AC161;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.contentfooter {
+    color: #fff;
+    text-align: center;
+    height: 124px;
+    padding: 10px;
+}
+
+footer {
+    background: #000;
+}
+
+.dadoscontato {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+    width: 88%;
+}
+
+.dadoscontato img {
+    float: right;
+    margin-top: 34px;
+    margin-right: 90px;
+}
+
+.imgpassos {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+section.passos h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 27px;
+
+}
+
+img.card-img-top {
+    padding: 12px;
+}
+
+.aprender .card-text,
+.bonus .card-text {
+    color: #000;
+    font-family: 'Montserrat', Sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.aprender h5,
+.bonus h5 {
+    margin-bottom: 15px;
+    color: #1b007f;
+    font-family: 'Montserrat', Sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+section.aprender h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+
+}
+
+.aprender .card {
+    margin: 13px;
+}
+
+section.bonus .card {
+    margin: 10px;
+    height: 427px;
+}
+
+
+.aprender .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section.aprender p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+
+    text-align: center;
+    color: #fff;
+}
+
+.titulo {
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header h2 {
+    color: #006633;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+}
+
+header p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 672px;
+}
+
+iframe#player {
+    margin: 10px auto;
+    display: block;
+}
+
+.boxAcompanhamento {
+    margin: 14px 15px 0px 15px;
+    padding: 50px 8px 50px 8px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: #006633;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    width: max-content;
+}
+
+.row.acompanhamento {
+    display: flex;
+    justify-content: center;
+}
+
+.topicos {
+    background-color: #006633;
+    width: 79%;
+    height: 400px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
+
+    padding: 20px 20px 20px 20px;
+    margin: 20px auto;
+}
+
+.titulotopico {
+    margin: 0px 0px 0px 15px;
+
+}
+
+.titulotopico h3 {
+    color: #FFFFFF;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 900;
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.blocos {
+
+    padding: 8px 8px 8px 8px;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: #006633;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.escola ul {
+    list-style: none;
+}
+
+.escola ul li {
+
+    font-size: 20px;
+    font-family: 'Montserrat';
+
+
+
+}
+
+.boxAcompanhamento ul li {
+
+    font-size: 24px;
+    font-family: 'Montserrat';
+    text-align: center;
+
+
+}
+
+.cuidado h2 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.limites p {
+    font-size: 26px;
+    text-align: center;
+    color: #fff;
+    width: 61%;
+    margin: 15px auto;
+}
+
+.cuidado {
+    background: #BA0000;
+    padding-bottom: 35px;
+    z-index: 3;
+    position: relative;
+
+}
+section.bonus {
+    background: #fff;
+    z-index: 3;
+    position: relative;
+}
+
+.limites {
+    border-top: 5px dashed #fff;
+    padding-top: 20px;
+    margin-top: 36px;
+    border-bottom: 5px dashed #fff;
+    height: 317px;
+    display: flex;
+    flex-direction: column;
+
+}
+section.comoFunciona {
+    z-index: 3;
+    position: relative;
+    background: #fff;
+}
+
+.primeiorDesenho {
+
+    font-size: 24px !important;
+    font-family: 'Montserrat';
+    text-align: center;
+
+
+}
+
+.fimvideos {
+    width: 68%;
+    display: block;
+    margin: 14px auto;
+    text-align: center;
+}
+
+.boxAcompanhamento ul {
+    list-style-type: none;
+}
+
+li i {
+    color: #006633;
+    margin-right: 3px;
+    margin-left: -21px;
+}
+
+section.comoFunciona h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+
+}
+
+.comoFunciona .card {
+    text-align: center;
+    width: 95% !important;
+    height: 253px !important;
+    box-shadow: 0px 0px 10px 0px #000000;
+    margin: 10px auto;
+}
+
+.comoFunciona .card img {
+    width: 98px;
+    margin: 10px auto;
+}
+
+.comoFunciona .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.slideantes,
+.slidedepois {
+    width: 89%;
+    display: block;
+    margin: 10px auto;
+    background: #000;
+    padding: 17px;
+    height: 418px;
+}
+
+.antesDepois h4 {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.slideantes img,
+.slidedepois img {
+    height: 380px;
+    width: auto !important;
+}
+
+.antesDepois .elementor-shape .elementor-shape-fill {
+    fill: #0d6e3d;
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+
+.certificado .elementor-shape .elementor-shape-fill {
+    fill: #fff;
+    transform-origin: center;
+    transform: rotateY(0deg);
+}
+/* section.bonus, .perguntas {
+    position: relative;
+    z-index: 3;
+    background: #fff;
+} */
+.fundorecap {
+    background: #fff;
+    z-index: 3;
+}
+
+
+section.convencer,
+.certificado {
+    background-color: #063;
+     
+    transition: background .3s, border-radius .3s, opacity .3s;
+    height: auto;
+
+    padding-bottom: 36px;
+    height: auto;
+    z-index: 3;
+    position: relative;
+
+
+}
+
+section.convencer h2,
+.certificado h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 27px;
+
+
+}
+
+section.convencer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+
+    text-align: center;
+    color: #fff;
+}
+
+.convencer img {
+    max-width: 60%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99);
+}
+
+.mae {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vp-video-wrapper.transparent {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99) !important;
+}
+
+.col.col-md-6.fotoaluno.mt-3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 612px;
+    margin-left: -50px;
+}
+
+.imgbonus {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+section.bonus h2 {
+    color: #006633;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.bonus .cards {
+    display: flex;
+    justify-content: center;
+}
+
+.bonus p {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+section.bonus .card {
+    margin: 17px 25px;
+    height: 465px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.slidecomunidade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -121px;
+}
+
+.row.ofertabonus h2 {
+    color: #B00000;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 900;
+    -webkit-text-stroke-color: #000;
+    stroke: #000;
+}
+
+.bonusvendidos h3 {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.valor h1 {
+
+    color: #EE0000;
+    font-family: "Rubik", Sans-serif;
+    font-size: 125px;
+    font-weight: 900;
+    text-decoration: line-through;
+    text-align: center;
+
+
+}
+
+.slidecertificado {
+    width: 517px;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.certificado p {
+    color: #FFFFFF;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.elementor-widget-container {
+    margin-top: 23%;
+}
+
+.slidecertificado img {
+    border: 5px solid;
+}
+
+.recap {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+    border: 2px solid #000;
+    width: 75%;
+    margin: 40px auto;
+    border-radius: 26px;
+    padding: 65px;
+    text-align: center;
+}
+
+.row.offer {
+    text-align: center;
+}
+
+h3.pensando {
+    margin: 40px auto;
+    width: 57%;
+}
+
+h3.investimento {
+    font-weight: 700;
+    text-align: center;
+    width: 46%;
+    margin: 20px auto;
+}
+
+span.green {
+    color: #006633;
+}
+
+h3.valores {
+    color: #006633;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    margin: 20px auto;
+}
+
+.offer ul li {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    border-bottom: 2px solid #ccc;
+    width: max-content;
+    margin: 10px auto;
+}
+
+.offer ul {
+    list-style-type: none;
+}
+
+.btnCompra {
+    font-family: "Rubik", Sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 55px;
+    text-shadow: 0px 0px 10px rgba(188.99999999999997, 188.99999999999997, 188.99999999999997, 0);
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #1000FF;
+    border-style: solid;
+    border-width: 0px 0px 10px 0px;
+    border-color: #060060;
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    padding: 25px 20px 25px 20px;
+    width: fit-content;
+    margin: 5px auto;
+    transition: .3s;
+}
+
+.btnCompra:hover {
+    transform: scale(1.1);
+    color: #fff;
+    text-decoration: none;
+}
+
+.offer img {
+    width: 40%;
+    margin: 5px auto;
+}
+
+.offer p {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.offer h3 {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 900;
+}
+
+.offer h4 {
+    color: #343434;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 30px;
+    /* font-weight: 600; */
+    width: 65%;
+    margin: 20px auto;
+}
+
+.criador img {
+    width: 100%;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.autorfoto {
+    width: 540px;
+    margin-top: 40px;
+}
+
+.criador p,
+.metodoaprovado p {
+    color: #FFFFFF;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.galeriaaprovado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeriaaprovado img {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.autorhist {
+    margin-top: 52px;
+}
+
+.row.secureb img {
+    width: 40%;
+    box-shadow: none;
+    margin: 5px auto;
+}
+
+
+.garantiafoto img {
+    width: 100%;
+}
+
+.garantiafoto {
+    width: 291px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 134px;
+}
+
+.garant {
+    margin-top: 65px;
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4em;
+    margin-left: -131px;
+    width: 100%;
+}
+
+@media (max-width:600px) {
+
+    body {
+        /* width: fit-content; */
+        width: 100%;
+    }
+
+    section.escolha {
+        margin-top: 26px;
+    }
+
+    .topicos {
+        height: auto;
+    }
+
+    .boxAcompanhamento {
+        margin-bottom: 39px;
+        width: 86%;
+        margin-left: auto;
+    }
+
+    .limites {
+
+        height: auto;
+
+        border-top: 18px dashed #fff;
+
+        border-bottom: 18px dashed #fff;
+
+
+
+    }
+
+    .slideantes,
+    .slidedepois {
+        width: 96%;
+        display: none;
+
+    }
+
+    .col.col-md-6.fotoaluno.mt-3 {
+
+        display: none;
+    }
+
+    .slidecertificado {
+        width: 90%;
+
+    }
+
+    section.videos h2 {
+
+        font-size: 29px;
+    }
+
+    .videos p {
+        font-size: 18px;
+        text-align: center;
+    }
+    section.comoFunciona h2 {
+   
+        font-size: 28px;
+    }
+    .card-body h5 {
+    font-size: 26px;
+}
+.comoFunciona p.card-text {
+    font-size: 17px;
+}
+.comoFunciona .card img {
+    width: 98px;
+   
+}
+.comoFunciona .card {
+    border-radius: 15px;
+    height: auto !important;
+    margin-top: 20px !important;
+   
+}
+section.aprender h2 {
+  
+    font-size: 25px;
+}
+section.aprender p {
+    
+    font-size: 18px;
+    
+}
+section.antesDepois h2 {
+   
+    font-size: 25px;
+}
+.antesDepois p {
+    font-size: 17px;
+   
+}
+.slidecomunidade {
+   
+    margin-top: -34px;
+}
+.certificado p {
+   
+    width: 89%;
+    text-align: center;
+}
+.certificado p {
+   
+    font-size: 15px;
+   
+}
+
+    .titleVideo {
+
+        font-size: 20px;
+
+    }
+    .perguntas h1 {
+    font-size: 30px !important;
+}
+section.perguntas h2{
+    font-size:21px;
+
+}
+.recap h3 {
+    font-size: 20px;
+}
+.recap {
+ 
+    padding: 11px;
+   
+}
+.imgrecap img {
+    width: 100%;
+}
+
+
+.smobile {
+    display: flex;
+    border: 4px solid #000;
+    margin: 78px auto;
+    width: 100%;
+    background: #000;
+}
+    h3.pensando {
+        
+        width: auto;
+        font-size:22px;
+    }
+    .valores li {
+    font-size: 20px !important;
+}
+.btnCompra {
+  
+    line-height: normal; 
+    
+    width: 84%;
+   
+}
+a.btnCompra {
+    font-size: 20px;
+    text-align: center;
+}
+    h3.valores {
+    font-size: 35px;
+    color: #006633;
+}
+.criador p, .metodoaprovado p {
+   
+    text-align: center;
+}
+.offer ul li {
+  
+    font-size: 20px;
+   
+}
+.offer img {
+    width: 100%;
+   
+}
+.offer h3 {
+   
+    font-size: 25px;
+}
+
+.logowhats {
+    margin: 0 auto;
+    display: flex;
+}
+.dadoscontato img {
+   
+    margin: 34px auto !important;
+}
+.dadoscontato {
+   
+    flex-direction: column;
+
+   
+}
+.duvidastwo p {
+
+    text-align: center;
+    margin-top: 62%;
+    font-size: 18px;
+}
+section.passos h2 {
+   
+    font-size: 25px;
+}
+.botaoContato {
+    width: 100%;
+  
+    display: flex;
+}
+.botaoContato a {
+    font-size: 14px !important;
+}
+.duvidastwo h3 {
+  
+    font-size: 25px;
+   
+    text-align: center;
+}
+.imgpassos img {
+    width: 92%;
+}
+.offer h4 {
+   
+    font-size: 20px;
+    /* font-weight: 600; */
+   width: 100%; 
+   
+}
+section.criador h2 {
+ 
+    font-size: 25px;
+}
+.row.secureb img {
+    width: 100%;
+   
+}
+.garant {
+
+    margin-left: 0;
+   
+}
+section.metodoaprovado h2 {
+
+    font-size: 25px;
+}
+.galeriaaprovado img {
+    width: 92%;
+   
+}
+.infos {
+
+    width: 88%;
+    padding: 5px;
+   
+}
+section.garantia h2, .duvidas h2 {
+   
+    font-size: 25px;
+}
+.garantiafoto {
+  
+    float: none; 
+ 
+  
+}
+.autorfoto {
+    width: 320px;
+ 
+}
+    h3.investimento{
+        font-size:25px;
+        width: auto;
+    }
+
+    .antesDepois h4 {
+        font-size: 30px;
+        width: 98%;
+    }
+    section.bonus h2 {
+   
+    font-size: 20px;
+   
+}
+.bonus p {
+    font-size: 18px;
+   
+}
+.bonus .cards {
+ 
+    flex-direction: column;
+}
+section.bonus .card {
+  
+    height: auto;
+   
+}
+.slidecomunidade h2 {
+    font-size: 25px !important;
+}
+div#comunidade {
+    width: 87% !important;
+}
+.bonusvendidos h3 {
+    font-size: 20px;
+}
+.contatoinfo {
+    margin-top: -170px;
+}
+
+    header h2 {
+
+        font-size: 23px;
+    }
+    section.convencer h2, .certificado h2 {
+    
+    font-size: 22px;
+}
+.carousel {
+    
+    width: inherit;
+}
+section.convencer p {
+    
+    font-size: 18px;
+   
+}
+
+    .elementor-widget-container {
+        margin-top: 17px;
+        padding: 10px;
+    }
+
+    header p {
+
+        font-size: 13px;
+
+    }
+
+    section.escola h2 {
+
+        font-size: 25px;
+    }
+
+    .escola ul li {
+        font-size: 18px;
+
+    }
+
+    .blocos {
+
+        width: 98%;
+        margin: 5px auto;
+    }
+
+    .whatsapp {
+        display: none;
+    }
+
+    .titulotopico h3 {
+
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .boxAcompanhamento ul li {
+        font-size: 15px;
+
+    }
+
+    section.escolha h2 {
+
+        font-size: 25px;
+    }
+
+    section.escolha p {
+        font-size: 17px;
+
+    }
+
+    .imagem img {
+        width: 98%;
+    }
+
+    section.escola h2 {
+
+        font-size: 25px;
+    }
+
+    .titulo {
+        width: 81%;
+
+    }
+
+    header#topo {
+        width: 100%;
+
+    }
+    iframe {
+        /* margin-bottom: 44px; */
+        /* margin-top: 12px; */
+        width: -webkit-fill-available;
+    }
+    .imgbonus img {
+    width: -webkit-fill-available;
+}
+.valor h1 {
+    font-size: 50px;
+}
+
+    .fimvideos {
+        width: 97%;
+
+    }
+
+    .cuidado h2 {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .elementor-shape {
+
+        position: relative;
+
+    }
+
+    .limites p {
+        font-size: 15px;
+        width: 90%;
+
+    }
+
+    .aprender .cards {
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 84% !important;
+        margin: 10px auto !important;
+    }
+
+    .aprender h5,
+    .bonus h5 {
+
+        font-size: 20px;
+
+    }
+
+    .aprender .card-text,
+    .bonus .card-text {
+
+        font-size: 15px;
+
+    }
+}
