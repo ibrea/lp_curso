@@ -1,0 +1,653 @@
+
+*{
+    padding:0;
+    margin:0;
+}
+html, body {
+    
+    text-rendering: optimizeLegibility;
+    image-rendering: optimizeQuality;
+ 
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: Galano;
+    src: url(../fonte/GalanoGrotesque.otf);
+  }
+
+.interface {
+    background-color: #2b598d;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin: 0 auto;
+    font-family: Galano;
+}
+.cabecalho{
+    background-image: url(../img/ban1.jpg);
+    height: 669px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0 auto;
+    
+}
+.menus{
+    transition: .3s;
+    position: fixed;
+    z-index: 999;
+    background-color: #ffffff;
+    height: 16%;
+    line-height: 4;
+}
+
+.col-md-3.logo {
+    padding: 22px;
+    margin-left: 265px;
+    margin-top: 3px;
+    width: 200px;
+}
+.logo img {
+    width: 100%;
+}
+.col-md-7.chamada {
+    background: #00000094;
+    padding: 21px;
+    width: 548px;
+    height: 237px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: -200px;
+}
+
+.col-md-5.menu {
+    padding: 7px;
+    margin-top: 9px;
+    margin-left: 208px;
+}
+.menu a{
+    color:#000;
+    font-size: 12pt;
+    transition: .3s;
+    font-weight: 500;
+}
+.menu a:hover{
+    color:rgb(58, 58, 58);
+}
+.blue{
+    width: 156px;
+    height: 44px;
+    background-color:#3aaacc;
+    color: #fff;
+    font-size:14pt;
+    border-radius: 28px;
+    border: none;
+    transition: .3s;
+}
+.blue:hover{
+    background-color: #fff;
+    color:#3aaacc;
+}
+.white{
+    width: 249px;
+    height: 44px;
+    background-color:#fff;
+    color: #3aaacc;
+    font-size:14pt;
+    border-radius: 28px;
+    border: none;
+    margin-top: 23px;
+    transition: .3s;
+}
+.white:hover{
+    background-color:#3aaacc;
+    color: #fff;
+}
+.btn_solicitacao{
+    width: 287px;
+    height: 49px;
+    background-color: #004a5e;
+    color: #ffffff;
+    font-size: 13pt;
+    border-radius: 28px;
+    border: none;
+    margin-top: 4px;
+    font-weight: bold;
+    transition: .3s;
+}
+.btn_solicitacao:hover{
+    background-color:#595959;
+    color: #fff;
+}
+.slide {
+    position: absolute;
+    top: 206px;
+    left: 341px;
+
+}
+.slide p{
+    font-size: 17pt;
+    color: #fff;
+}
+.slide h2{
+    font-size: 30pt;
+    color: #fff;
+}
+/*quem somoso*/
+
+#quemsomos{
+    background-image: url("../img/bgsobre.jpg");
+    background-size: cover;
+    height: 716px;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-top: -34px;
+    margin: -11px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.anunciar {
+    background-image: url("../img/bgcontato.jpg");
+    background-size: cover;
+    padding: 50px 0;
+}
+ .anunciar h2 {
+    margin: 0 0 20px 0;
+    color: #6BEB4D;
+    font-weight: bold;
+}
+.empresas{
+    background-image: url("../img/empresas.jpg");
+    background-position: center;
+}
+.estudantes{
+    background-image: url("../img/estudantes.jpg");
+    background-position: center;
+}
+p.title {
+    font-size: 33px;
+    color: #004a5e;
+}
+.destaque{
+    color: #083771;
+    font-weight: bold;
+}
+.texto{
+    color: #000;
+    margin-top: 69px;
+    margin-left: 39px;
+    padding: 46px;
+    font-size: 19px;
+
+
+    }
+    .col-md-4.imagem {
+       
+       
+    }
+    .col-md-4.imagem img {
+        width: 408px;
+        position: absolute;
+        right: 241px;
+        top: 736px;
+    }
+    /*serviços*/
+
+    .col-md-8.blocosrv {
+        background-color: #004a5e;
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: auto;
+    }
+    .blocosrv h2{
+        color:#6beb4d;
+        padding:20px;
+    }
+    .card h5{
+        color: #6beb4d;
+        font-weight: bold;
+    }
+    .card p, li{
+        color: #fff;
+      
+    }
+    .card-historia li{
+        color: #000;
+        text-align: left;
+      
+    }
+    .card{
+        max-width: 560px;
+        width: 540px !important;
+        position: relative;
+        transition: .3s;
+        z-index: 1;
+        cursor: pointer;
+        border: none;
+        background: none;
+          
+    }
+    .col-md-12.blocohist h2 {
+        color: #004a5e;
+    }
+    .blocohist .card-historia {
+        margin: 40px 0;
+        border: 3px solid #023678;
+        border-radius: 6px;
+        min-height: 520px;
+        color: #000;
+        font-weight: bold;
+    }
+    .row.cards {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    /* .card:hover{
+        transform: scale(1.1) !important;
+        z-index: 9999;
+    } */
+
+    .col-md-12.blocohist {
+        background: #6beb4d;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding-top: 24px;
+    }
+    .armazenagem {
+        background-image: url(../img/agro1.png);
+        background-size: 378px;
+        background-repeat: no-repeat;
+        background-position: -149px;
+    }
+    .fracionado{
+        background-image: url("../img/agro2.png");
+        background-size: 346px;
+        background-repeat: no-repeat;
+        background-position: -31px;
+    
+    }
+    .lotacao{
+        background-image:url("../img/vans.jpg");
+        background-size: 433px;
+        background-repeat: no-repeat;
+        background-position: -155px;
+        height: 204px;
+    
+    }
+    .outros{
+        background-image: url("../img/entrega.jpg");
+        background-size: 336px;
+        background-repeat: no-repeat;
+        background-position: -100px;
+    }
+    /*fale conosco*/
+    form input {
+        padding: 7px;
+        border-radius: 17px;
+        border: 1px solid #3aaacc;;
+        margin: 5px;
+    }
+    textarea {
+        width: 414px;
+        height: 178px;
+        border-radius: 23px;
+        padding: 10px;
+        margin-bottom: 16px;
+        border:1px solid #3aaacc;
+    }
+    #contato{
+        background-color: #fff;
+          
+        margin-bottom: 25px;
+        
+    }
+    #contato p{
+        color: #3aaacc;
+        font-size: 20px;
+
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        /* width: 300px; */
+    }
+    form input {
+        padding: 7px;
+        border-radius: 3px;
+        border: 2px solid #ffc20d;
+        margin-bottom: 11px;
+    }
+    #contato h2{
+        
+        font-weight: bold;
+    }
+    .btn_faleconosco{
+        width: 156px;
+        height: 44px;
+        background-color:#3aaacc;
+        color: #fff;
+        font-size:11pt;
+        border-radius: 28px;
+        border: none;
+        transition: .3s;
+    }
+    .btn_faleconosco:hover{
+        background-color:#2e4977;
+        color: #fff;
+    }
+    small{
+        color: #3aaacc;
+        margin-left: 80px;
+    }
+    .imgcontato img {
+        width: 703px !important;
+        position: absolute;
+        top: 1714px;
+        right: 0px;
+    }
+    
+    .col-md-8.blococontato {
+        margin: 75px auto;
+    }
+    /*footer*/
+    #footer .rsocial {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #footer .rsocial li a {
+        border-radius: 50%;
+        border: 2px solid #1a50a3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        color: #1a50a3;
+        font-size: 19px;
+    }
+    
+    #footer .rsocial li a:hover {
+        text-decoration: none;
+    }
+    footer#footer {
+        border-top: 1px solid #3aaacc;
+    }
+    .cima {
+        background-color: #3aaacc;
+        border-radius: 65px;
+        color: #fff;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        z-index: 3;
+        font-size: 31px;
+        text-align: center;
+        box-shadow: 1px 1px 10px #fff;
+        margin-bottom: 25px;
+        right: 10px;
+        position: absolute;
+        top: 2235px;
+        transition: .3s;
+    }
+    .cima:hover{
+        background-color: #1a50a3;
+    }
+    /*telas menores*/
+    @media screen and (max-width: 1418px) {
+
+        .col-md-3.logo {
+            
+             margin-left: 40px; 
+            
+        }
+     .col-md-5.menu {
+           margin-left:0;
+        } 
+     
+        .imgcontato img {
+            width: 624px !important;
+            
+            top: 1832px;
+            
+        }
+        .cima {
+            top: 2276px;
+            
+        }
+        p.card-text {
+            font-size: 12px;
+            width: auto;
+        }
+
+
+
+    }
+    @media screen and (max-width: 1280px) {
+        .imgcontato img {
+            right: -43px;
+            top: 1931px;
+        }
+        form {
+            width: 100%;
+        }
+        .col-md-4.imagem img {
+           
+            right: 175px;
+            
+        }
+
+
+
+
+    }
+    /*mobile*/
+
+    @media screen and (max-width: 640px) {
+
+        body {
+            width: fit-content;
+            
+        }
+        .col-md-3.logo {
+           
+     margin-top: 22px;
+     margin-left: 0;
+     
+        }
+        .logo img{
+            width: 150px;
+        }
+        li.nav-item {
+            margin: 0 auto;
+        }
+        .col-md-5.menu {
+            margin-top: -80px;
+            /* margin-left: 543px; */
+            width: fit-content;
+            position: absolute;
+            top: 104px;
+            right: 29px;
+            
+        }
+        .cabecalho {
+            background-image: url(../img/ban1.jpg);
+            height: 455px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            margin: 0 auto;
+            
+        }
+        .slide {
+            top: 161px;
+    left: 10%;
+        }
+        button.navbar-toggler {
+            
+            background-color: #3aaacc;
+        }
+        div#navbarSupportedContent {
+            background-color: #fff;
+            position: absolute;
+            right: -111%;
+            top: 54px;
+            width: 670px;
+            z-index: 99;
+            text-align: center;
+            padding: 24px;
+        }
+        .blue{
+            margin-left: 237px;
+    margin-top: 10px;
+        }
+        .texto {
+           
+            margin-top: -31px;
+            height: 682px;
+            font-size: 20px;
+            margin-left: -6px;
+            text-align: center;
+        }
+        .col-md-7.chamada {
+        
+            margin-left: -47px;
+            width: auto;
+        }
+        #quemsomos {
+        
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            margin-top: -1px !important;
+            margin: -11px;
+           height: 724px;
+            
+        }
+        .row.cards {
+           
+           
+            padding: 5px;
+            width: 468px;
+        }
+        .col-md-4.imagem img {
+            
+            right: 15px;
+            top: 907px;
+            width: 319px;
+        }
+        
+        section#servicos {
+            margin-top: 23px;
+            margin-left: 25px;
+            
+            
+        }
+        p.card-text {
+            font-size: 12px;
+            width: auto;
+        }
+        #contato {
+            background-color: #fff;
+            margin-left: 10px;
+            width: 100%;
+            
+        }
+        #contato p {
+            
+            font-size: 22px;
+        }
+        .col-md-4.imgcontato {
+            display: none;
+        }
+        .btn_solicitacao {
+            width: 256px;
+            height: 45px;
+            font-size: 12pt;
+           
+        }
+        footer#footer {
+            
+          /*  width: 618px;*/
+        }
+        .lotacao {
+          
+            height: 0;
+        }
+        .menus {
+            
+            position: relative;
+            height: 31%;
+
+            
+        }
+        .cima.aos-init.aos-animate {
+            display: none;
+        }
+               
+        
+        
+        .card {
+            
+          width: 100%;
+            position: relative;
+            transition: .3s;
+            z-index: 1;
+            cursor: pointer;
+        }
+        form input, textarea {
+            width: 100%;
+        }
+        button.white {
+            margin-left: 35px;
+        }
+        small{
+            
+            margin-left: 52px;
+        }
+        .col-md-8.blocosrv {
+            
+           
+            
+            margin-left: 0;
+            margin-top: 71px;
+        }
+        .col-md-12.blocohist {
+            
+            width: 106%;
+            margin-left: -11px;
+            padding: 25px;
+        }
+        .anunciar {
+          
+            width: 465px;
+            margin-left: -22px;
+        }
+        .card {
+            width: 88% !important;
+        }
+        .col-md-8.blococontato {
+            margin: 75px auto;
+            width: 389px;
+            margin-left: -1px;
+        }
+    }
+
+    
